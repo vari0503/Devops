@@ -1,0 +1,67 @@
+Started by user varish 
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\sout1
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential b193719c-89a8-4b00-9f2b-8e01a83c0acf
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\sout1\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/vari0503/sout.git # timeout=10
+Fetching upstream changes from https://github.com/vari0503/sout.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.46.1.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/vari0503/sout.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "origin/main^{commit}" # timeout=10
+Checking out Revision 145c554161f8b8ed8a3b11e2bcead874390d55fe (origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 145c554161f8b8ed8a3b11e2bcead874390d55fe # timeout=10
+Commit message: "Add files via upload"
+ > git.exe rev-list --no-walk 145c554161f8b8ed8a3b11e2bcead874390d55fe # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] git
+The recommended git tool is: NONE
+using credential b193719c-89a8-4b00-9f2b-8e01a83c0acf
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\sout1\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/vari0503/sout.git # timeout=10
+Fetching upstream changes from https://github.com/vari0503/sout.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.46.1.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/vari0503/sout.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 145c554161f8b8ed8a3b11e2bcead874390d55fe (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 145c554161f8b8ed8a3b11e2bcead874390d55fe # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D main # timeout=10
+ > git.exe checkout -b main 145c554161f8b8ed8a3b11e2bcead874390d55fe # timeout=10
+Commit message: "Add files via upload"
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\sout1>python sout.py 
+The sorted list is: [1, 2, 3, 10, 15, 22]
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Testing is done
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
